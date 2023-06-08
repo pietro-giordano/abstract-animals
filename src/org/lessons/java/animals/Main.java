@@ -12,8 +12,22 @@ public class Main {
             System.out.println(animal.getClass().getSimpleName() + ":");
             animal.eating();
             animal.makeNoise();
+            if (animal instanceof CanFly) {
+                makeFly((CanFly) animal);
+            } else {
+                makeSwim((CanSwim) animal);
+            }
             animal.sleep();
             System.out.println("");
         }
+    }
+
+    // Methods
+    public static void makeFly(CanFly animal) {
+        animal.fly();
+    }
+
+    public static void makeSwim(CanSwim animal) {
+        animal.swim();
     }
 }
